@@ -13,7 +13,7 @@ export class Booking {
     readonly passengerId: string;
     seatId: string;
     status: BookingStatus;
-    readonly bookingReference: string;
+    readonly PNR: string;
     readonly createdAt: Date;
   
     constructor(flightId: string, passengerId: string, seatId: string) {
@@ -22,7 +22,7 @@ export class Booking {
       this.passengerId = passengerId;
       this.seatId = seatId;
       this.status = BookingStatus.CONFIRMED;
-      this.bookingReference = Math.random()
+      this.PNR = Math.random()
         .toString(36)
         .toUpperCase()
         .substr(2, 6);
@@ -31,7 +31,7 @@ export class Booking {
   }
 
 export interface IBookingResponse {
-    bookingReference: string;
+    PNR: string;
     flightDetails: Flight;
     seatNumber: string;
     passengerDetails: Passenger;
@@ -42,6 +42,6 @@ export interface ICancellationResponse {
   }
 
 export interface ISeatModificationResponse {
-    bookingReference: string;
+    PNR: string;
     newSeatNumber: string;
   }

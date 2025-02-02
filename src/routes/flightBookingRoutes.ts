@@ -46,7 +46,7 @@ router.get(
 
 // View All Passengers API
 router.get(
-    "/api/flights/:flightId/passengers",
+    "/api/flights/passengers/:flightId",
     async (req: Request, res: Response, next: NextFunction) => {
       try {
         const { flightId } = req.params;
@@ -63,15 +63,15 @@ router.post(
     "/api/bookings/cancel",
     async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const { email, bookingReference } = req.body;
-        if (!email || !bookingReference) {
+        const { email, PNR } = req.body;
+        if (!email || !PNR) {
           return res.status(400).json({
             error: "Email and booking reference are required",
           });
         }
         const result = await bookingController.cancelBooking(
           email,
-          bookingReference
+          PNR
         );
         res.json(result);
       } catch (error) {
@@ -85,15 +85,15 @@ router.post(
     "/api/bookings/modify-seat",
     async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const { email, bookingReference, newSeatNumber } = req.body;
-        if (!email || !bookingReference || !newSeatNumber) {
+        const { email, PNR, newSeatNumber } = req.body;
+        if (!email || !PNR || !newSeatNumber) {
           return res.status(400).json({
             error: "Email, booking reference, and new seat number are required",
           });
         }
         const result = await bookingController.modifySeat(
           email,
-          bookingReference,
+          PNR,
           newSeatNumber
         );
         res.json(result);

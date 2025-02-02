@@ -6,11 +6,11 @@ const express = require("express");
 
 const app = express();
 app.use(express.json());
-app.use(errorHandler);
 app.use(initializeSampleFlights);
 
 const PORT = process.env.PORT || 8000;
 app.use("/", router);
+app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

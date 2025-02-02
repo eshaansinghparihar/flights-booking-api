@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"John Doe 7\",\n    \"email\": \"john7@example.com\",\n    \"flightId\": \"FL123\"\n}",
+					"raw": "{\n    \"name\": \"John Doe 1\",\n    \"email\": \"john1@example.com\",\n    \"flightId\": \"FL124\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -468,6 +468,836 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"status\": \"Service Health OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View Flight Ticket Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/bookings/passenger/john@example.com",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"passenger",
+						"john@example.com"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View Flight Ticket Details - Fetched Successfully",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/bookings/passenger/john@example.com",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"passenger",
+								"john@example.com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2514"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d2-TO4U7kkY/R4C2j7z2uK2W2lWOoQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 13:59:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"bookingReference\": \"WLK05O\",\n        \"flightDetails\": {\n            \"flightId\": \"255srybc5\",\n            \"flightNumber\": \"FL123\",\n            \"origin\": \"BLR\",\n            \"destination\": \"BOM\",\n            \"departureDate\": \"2/2/2025\",\n            \"totalSeats\": 16,\n            \"seats\": [\n                {\n                    \"seatId\": \"4cum510hw\",\n                    \"seatNumber\": \"1A\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"wk4ab8hx4\",\n                    \"seatNumber\": \"1B\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"qthlxsxp2\",\n                    \"seatNumber\": \"1C\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"m3xfs9ait\",\n                    \"seatNumber\": \"1D\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"2kamjrww7\",\n                    \"seatNumber\": \"2A\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"v2xammbjj\",\n                    \"seatNumber\": \"2B\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"ddn5qsmgc\",\n                    \"seatNumber\": \"2C\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"j8jcid5sl\",\n                    \"seatNumber\": \"2D\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"fmxtt4vr1\",\n                    \"seatNumber\": \"3A\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"wvqxj1xxz\",\n                    \"seatNumber\": \"3B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"gfc6d56og\",\n                    \"seatNumber\": \"3C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"agqggadzn\",\n                    \"seatNumber\": \"3D\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"ee1iwn3x9\",\n                    \"seatNumber\": \"4A\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"5q1az0gr7\",\n                    \"seatNumber\": \"4B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"x6n1d9355\",\n                    \"seatNumber\": \"4C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"4vpx14ngv\",\n                    \"seatNumber\": \"4D\",\n                    \"isAvailable\": true\n                }\n            ]\n        },\n        \"seatNumber\": \"2D\",\n        \"passengerDetails\": {\n            \"passengerId\": \"zgayqn69e\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        }\n    },\n    {\n        \"bookingReference\": \"DYQAFK\",\n        \"flightDetails\": {\n            \"flightId\": \"d3vzw0haq\",\n            \"flightNumber\": \"FL124\",\n            \"origin\": \"BOM\",\n            \"destination\": \"BLR\",\n            \"departureDate\": \"2/2/2025\",\n            \"totalSeats\": 16,\n            \"seats\": [\n                {\n                    \"seatId\": \"jjn8xibte\",\n                    \"seatNumber\": \"1A\",\n                    \"isAvailable\": false\n                },\n                {\n                    \"seatId\": \"6m5miia7k\",\n                    \"seatNumber\": \"1B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"9ee2m6jx7\",\n                    \"seatNumber\": \"1C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"qw2zfsz8q\",\n                    \"seatNumber\": \"1D\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"buq4hmi5p\",\n                    \"seatNumber\": \"2A\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"p6eaz4qho\",\n                    \"seatNumber\": \"2B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"yo4iu1mxh\",\n                    \"seatNumber\": \"2C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"vnxilj8q4\",\n                    \"seatNumber\": \"2D\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"1a346uaxu\",\n                    \"seatNumber\": \"3A\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"ay6obkvqw\",\n                    \"seatNumber\": \"3B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"d4uuep2b0\",\n                    \"seatNumber\": \"3C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"d9kvcq6nx\",\n                    \"seatNumber\": \"3D\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"n155b2nlg\",\n                    \"seatNumber\": \"4A\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"o7qpwwr20\",\n                    \"seatNumber\": \"4B\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"pkfkd8ec4\",\n                    \"seatNumber\": \"4C\",\n                    \"isAvailable\": true\n                },\n                {\n                    \"seatId\": \"t67wi4bco\",\n                    \"seatNumber\": \"4D\",\n                    \"isAvailable\": true\n                }\n            ]\n        },\n        \"seatNumber\": \"1A\",\n        \"passengerDetails\": {\n            \"passengerId\": \"zgayqn69e\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        }\n    }\n]"
+				},
+				{
+					"name": "View Flight Ticket Details - Booking Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/bookings/passenger/test@example.com",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"passenger",
+								"test@example.com"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-0U6bLq4TPkN45xm28FRBluH9gso\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 14:06:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"No bookings found for this email\"\n}"
+				}
+			]
+		},
+		{
+			"name": "View All Passengers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/flights/passengers/:flightId",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"flights",
+						"passengers",
+						":flightId"
+					],
+					"variable": [
+						{
+							"key": "flightId",
+							"value": "FL124"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "View All Passengers - Flight Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/flights/passengers/:flightId",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"flights",
+								"passengers",
+								":flightId"
+							],
+							"variable": [
+								{
+									"key": "flightId",
+									"value": "FL129"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-NjIJFeaGdTpXG84VoCBbxNNsljc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 15:57:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Flight not found\"\n}"
+				},
+				{
+					"name": "View All Passengers - Fetched Successfully",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/flights/passengers/:flightId",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"flights",
+								"passengers",
+								":flightId"
+							],
+							"variable": [
+								{
+									"key": "flightId",
+									"value": "FL124"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "538"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21a-eaChSryR9t1USCrSHCJxufX82dg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:00:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"passenger\": {\n            \"passengerId\": \"c904aszh4\",\n            \"name\": \"John Doe\",\n            \"email\": \"john@example.com\"\n        },\n        \"seatNumber\": \"1A\"\n    },\n    {\n        \"passenger\": {\n            \"passengerId\": \"ijt92bylg\",\n            \"name\": \"John Doe 1\",\n            \"email\": \"john1@example.com\"\n        },\n        \"seatNumber\": \"1B\"\n    },\n    {\n        \"passenger\": {\n            \"passengerId\": \"4vouawrgs\",\n            \"name\": \"John Doe 2\",\n            \"email\": \"john2@example.com\"\n        },\n        \"seatNumber\": \"1C\"\n    },\n    {\n        \"passenger\": {\n            \"passengerId\": \"blkzgwntx\",\n            \"name\": \"John Doe 3\",\n            \"email\": \"john3@example.com\"\n        },\n        \"seatNumber\": \"1D\"\n    },\n    {\n        \"passenger\": {\n            \"passengerId\": \"v6nai7qv2\",\n            \"name\": \"John Doe 4\",\n            \"email\": \"john4@example.com\"\n        },\n        \"seatNumber\": \"2A\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Cancel Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"GE7S4D\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/api/bookings/cancel",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"cancel"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Booking - Missing Email or PNR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/cancel",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"cancel"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"34-RjEbRCaJw+rleVPsx7mETmCCYqI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:14:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email and booking reference are required\"\n}"
+				},
+				{
+					"name": "Cancel Booking - Booking Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"GE7S4D\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/cancel",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"cancel"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-EV3nGNSSE3cMZKe/e/inDRwM5eg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:18:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Booking not found\"\n}"
+				},
+				{
+					"name": "Cancel Booking - Cancelled Successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"9AINZW\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/cancel",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-9TPlTQq3wHNcwVF31TOYM8H4fxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:20:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Booking cancelled successfully\"\n}"
+				},
+				{
+					"name": "Cancel Booking - Invalid Email Against Booking",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"Q9ZX2W\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/cancel",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"cancel"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-yv+PfsYortRQf17VXsSEErDwcN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:22:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid email for this booking\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modify Seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"john1@example.com\",\n    \"PNR\":\"03KB2A\",\n    \"newSeatNumber\":\"1C\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/api/bookings/modify-seat",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"bookings",
+						"modify-seat"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Modify Seat - Missing Email, PNR or New Seat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"\"\n    // \"newSeatNumber\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/modify-seat",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"modify-seat"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-FDb8yZvb1jxRyAtP433soDwSNd8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:27:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email, booking reference, and new seat number are required\"\n}"
+				},
+				{
+					"name": "Modify Seat - Seat Not Available",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john1@example.com\",\n    \"PNR\":\"03KB2A\",\n    \"newSeatNumber\":\"1A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/modify-seat",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"modify-seat"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-v1exVMLs2Nxwq3og8bPP/NEo0U4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:32:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Seat not available\"\n}"
+				},
+				{
+					"name": "Modify Seat - Email PNR Mismatch",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john@example.com\",\n    \"PNR\":\"03KB2A\",\n    \"newSeatNumber\":\"1A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/modify-seat",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"modify-seat"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-yv+PfsYortRQf17VXsSEErDwcN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:32:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid email for this booking\"\n}"
+				},
+				{
+					"name": "Modify Seat - Successfully Modified Seat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"john1@example.com\",\n    \"PNR\":\"03KB2A\",\n    \"newSeatNumber\":\"1C\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings/modify-seat",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"modify-seat"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-6RMXiFCoPp3JgWtUmZFC46Uz850\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 16:32:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"PNR\": \"03KB2A\",\n    \"newSeatNumber\": \"1C\"\n}"
 				}
 			]
 		}

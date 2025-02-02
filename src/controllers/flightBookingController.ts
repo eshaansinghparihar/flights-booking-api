@@ -39,22 +39,52 @@ export class FlightBookingController{
   async bookFlight(passengerDetails: IPassengerDetails,
     flightNumber: string
   ): Promise<IBookingResponse|undefined> {
-    const booking = await this.flightBookingService.bookFlight(passengerDetails, flightNumber, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
-    return booking;
+    try{
+        const booking = await this.flightBookingService.bookFlight(passengerDetails, flightNumber, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
+        return booking;
+    }
+    catch(error){
+        throw error;
+    }
   }
 
-  async getFlightTicketDetails(email: string) {
-    throw new Error("Method not implemented.");
+  async getFlightTicketDetails(email: string) : Promise<IBookingResponse[]>{
+    try{
+        const response = await this.flightBookingService.getFlightTicketDetails(email, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
+        return response;
+    }
+    catch(error){
+        throw error;
+    }
   }
 
-  async getAllPassengers(flightId: string) {
-    throw new Error("Method not implemented.");
+  async getAllPassengers(flightId: string) : Promise<IPassengerListResponse[]>{
+    try{
+        const passengers = await this.flightBookingService.getAllPassengers(flightId, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
+        return passengers;
+    }
+    catch(error){
+        throw error;
+    }
   }
 
-  async cancelBooking(email: any, bookingReference: any) {
-    throw new Error("Method not implemented.");
+  async cancelBooking(email: any, pnr: any) : Promise<ICancellationResponse>{
+    try{
+        const response = await this.flightBookingService.cancelBooking(email, pnr, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
+        return response;
+    }
+    catch(error){
+        throw error;
+    }
   }
   async modifySeat(email: any, bookingReference: any, newSeatNumber: any) {
-    throw new Error("Method not implemented.");
+    try{
+        const response = await this.flightBookingService.modifySeat(email, bookingReference, newSeatNumber, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
+        return response;
+    }
+    catch(error)
+    {
+        throw error;
+    }
   }
 }
