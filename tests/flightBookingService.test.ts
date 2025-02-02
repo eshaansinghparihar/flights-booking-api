@@ -1,80 +1,37 @@
-// const {
-//   FlightBookingService,
-// } = require("../src/services/flightBookingService");
+import { FlightBookingService } from "../src/services/flightBookingService";
+import { Flight, ISeat } from "../src/models/Flight";
+import { Booking, BookingStatus } from "../src/models/Booking";
+import { Passenger } from "../src/models/Passenger";
+import { FlightBookingError } from "../src/errors/FlightBookingError";
 
-// const { Flight } = require("../src/models/types");
+jest.mock('../src/models/Flight');
 
-// describe("FlightBookingService", () => {
-//   let service : typeof FlightBookingService;
-//   let testFlight : typeof Flight;
+describe.only('FlightBookingService', () => {
+  let service: FlightBookingService;
 
-//   beforeEach(() => {
-//     service = new FlightBookingService();
-//     testFlight = new Flight("FL123", "NYC", "LAX", new Date("2024-03-01"), 6);
-//     service.flights.set(testFlight.flightId, testFlight);
-//   });
+  beforeEach(() => {
+    service = new FlightBookingService();
+  });
 
-//   describe("bookFlight", () => {
-//     it("should successfully book a flight", async () => {
-//       const booking = await service.bookFlight(
-//         { name: "John Doe", email: "john@example.com" },
-//         testFlight.flightId
-//       );
+  test('should successfully book a flight', async () => {
+    const mockFlight = new Flight({ flightNumber: 'FL123', origin: 'BLR', destination: 'BOM', departureDate: '2023-12-31', totalSeats: 10 });
+    const mockPassenger = new Passenger('John Doe', 'john@example.com');
+    const mockAvailableSeat: ISeat = { seatId: '1A', seatNumber: '1A', isAvailable: true };
+    
+    mockFlight.seats = [mockAvailableSeat];
 
-//       expect(booking.passengerDetails.name).toBe("John Doe");
-//       expect(booking.flightDetails.flightNumber).toBe("FL123");
-//       expect(booking.bookingReference).toBeDefined();
-//     });
+    const booking = await service.bookFlight({ name: 'John Doe', email: 'john@example.com' }, 'FL123', new Map([['FL123', mockFlight]]), new Map([['john@example.com', mockPassenger]]), new Map());
 
-//     it("should throw error when flight is full", async () => {
-//       // Book all seats
-//       for (let i = 0; i < 6; i++) {
-//         await service.bookFlight(
-//           { name: `Passenger ${i}`, email: `passenger${i}@example.com` },
-//           testFlight.flightId
-//         );
-//       }
+    expect(booking).toBeDefined();
+    expect(booking?.seatNumber).toBe('1A');
+  });
 
-//       await expect(
-//         service.bookFlight(
-//           { name: "Late Passenger", email: "late@example.com" },
-//           testFlight.flightId
-//         )
-//       ).rejects.toThrow("No seats available");
-//     });
-//   });
-
-//   describe("getFlightTicketDetails", () => {
-//     it("should return ticket details for a booked passenger", async () => {
-//       await service.bookFlight(
-//         { name: "John Doe", email: "john@example.com" },
-//         testFlight.flightId
-//       );
-
-//       const tickets = await service.getFlightTicketDetails("john@example.com");
-//       expect(tickets).toHaveLength(1);
-//       expect(tickets[0].passengerDetails.name).toBe("John Doe");
-//     });
-//   });
-
-//   describe("cancelBooking", () => {
-//     it("should successfully cancel a booking", async () => {
-//       const booking = await service.bookFlight(
-//         { name: "John Doe", email: "john@example.com" },
-//         testFlight.flightId
-//       );
-
-//       const result = await service.cancelBooking(
-//         "john@example.com",
-//         booking.bookingReference
-//       );
-//       expect(result.message).toBe("Booking cancelled successfully");
-
-//       // Verify seat is available again
-//       const seat = testFlight.seats.find(
-//         (s: { seatNumber: any; }) => s.seatNumber === booking.seatNumber
-//       );
-//       expect(seat.isAvailable).toBe(true);
-//     });
-//   });
-// });
+  test('should throw error if flight not found', async () => {
+    try {
+      await service.getFlightTicketDetails('nonexistent@example.com', new Map(), new Map(), new Map());
+    } catch (error: any) {
+      expect(error).toBeInstanceOf(FlightBookingError);
+      expect(error.message).toBe('No bookings found for this email');
+    }
+  });
+});

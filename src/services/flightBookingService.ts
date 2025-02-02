@@ -1,5 +1,5 @@
 import { FlightBookingError } from "../errors/FlightBookingError";
-import { Flight, IFlightConstructor, ISeat } from '../models/Flight';
+import { Flight } from '../models/Flight';
 import { Booking, BookingStatus, IBookingResponse, ICancellationResponse, ISeatModificationResponse } from '../models/Booking';
 import { Passenger, IPassengerDetails, IPassengerListResponse } from '../models/Passenger';
 

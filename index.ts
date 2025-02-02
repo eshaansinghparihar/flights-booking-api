@@ -4,7 +4,7 @@ import { initializeSampleFlights } from "./src/middlewares/initializeFlights";
 
 const express = require("express");
 
-const app = express();
+export const app = express();
 app.use(express.json());
 app.use(initializeSampleFlights);
 

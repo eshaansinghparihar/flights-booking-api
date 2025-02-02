@@ -1,5 +1,5 @@
-import { Flight, IFlightConstructor, ISeat } from '../models/Flight';
-import { Booking, BookingStatus, IBookingResponse, ICancellationResponse, ISeatModificationResponse } from '../models/Booking';
+import { Flight } from '../models/Flight';
+import { Booking, IBookingResponse, ICancellationResponse, ISeatModificationResponse } from '../models/Booking';
 import { Passenger, IPassengerDetails, IPassengerListResponse } from '../models/Passenger';
 
 import { FlightBookingService } from "../services/flightBookingService";
@@ -11,11 +11,11 @@ export class FlightBookingController{
   private passengers: Map<string, Passenger>;
   private readonly flightBookingService : FlightBookingService
 
-  constructor() {
+  constructor(service?: FlightBookingService) {
     this.flights = new Map<string, Flight>();
     this.bookings = new Map<string, Booking>();
     this.passengers = new Map<string, Passenger>();
-    this.flightBookingService = new FlightBookingService();
+    this.flightBookingService = service || new FlightBookingService();
   }
 
   static getInstance() {
@@ -29,6 +29,7 @@ export class FlightBookingController{
   }
 
   public initializeFlights(flights: Map<string, Flight>) {
+    'Purchasing Planes.....Painting Them.....Improving Ambience.....Lifting Tray Table.....Opening Window Shades.....Straightening Seats'
     this.flights = flights;
   }
 
@@ -77,7 +78,7 @@ export class FlightBookingController{
         throw error;
     }
   }
-  async modifySeat(email: any, bookingReference: any, newSeatNumber: any) {
+  async modifySeat(email: any, bookingReference: any, newSeatNumber: any) : Promise<ISeatModificationResponse> {
     try{
         const response = await this.flightBookingService.modifySeat(email, bookingReference, newSeatNumber, FlightBookingController.instance.flights, FlightBookingController.instance.passengers, FlightBookingController.instance.bookings);
         return response;

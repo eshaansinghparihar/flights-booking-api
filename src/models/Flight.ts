@@ -12,6 +12,7 @@ export interface ISeat {
     isAvailable: boolean;
 }
 
+
 export class Flight {
     readonly flightId: string;
     readonly flightNumber: string;
