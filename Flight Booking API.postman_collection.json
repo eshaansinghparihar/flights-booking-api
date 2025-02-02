@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "bc45a669-ada9-4847-b36f-cedab9379f43",
+		"name": "Flight Booking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11968635"
+	},
+	"item": [
+		{
+			"name": "Book A Flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe 7\",\n    \"email\": \"john7@example.com\",\n    \"flightId\": \"FL123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostname}}/api/bookings",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Book A Flight - Missing Name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\",\n    \"flightId\": \"abc123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-BxWmqN6v2wiRjyZvgCF5NE9qwQk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 08:56:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Missing required fields: name, email, and flightId are required\"\n}"
+				},
+				{
+					"name": "Book A Flight - Missing Email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"flightId\": \"abc123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-BxWmqN6v2wiRjyZvgCF5NE9qwQk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 08:57:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Missing required fields: name, email, and flightId are required\"\n}"
+				},
+				{
+					"name": "Book A Flight - Missing Flight",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-BxWmqN6v2wiRjyZvgCF5NE9qwQk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 08:57:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Missing required fields: name, email, and flightId are required\"\n}"
+				},
+				{
+					"name": "Book A Flight - Invalid Email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john1example.com\",\n    \"flightId\": \"abc123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-ZXxU9PuyF+UpUGdndifSZ6AtgHo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 08:58:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid email format\"\n}"
+				},
+				{
+					"name": "Book A Flight - Flight Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"flightId\": \"abc123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-NjIJFeaGdTpXG84VoCBbxNNsljc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Feb 2025 09:10:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Flight not found\"\n}"
+				},
+				{
+					"name": "Book A Flight - Booking Successful",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"flightId\": \"FL124\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/api/bookings",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1252"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e4-BearAwbcmsjdfJVM/mI8hjmwp2c\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 08:12:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bookingReference\": \"TEQJRX\",\n    \"flightDetails\": {\n        \"flightId\": \"frjgi5uwe\",\n        \"flightNumber\": \"FL126\",\n        \"origin\": \"CCU\",\n        \"destination\": \"BLR\",\n        \"departureDate\": \"2/2/2025\",\n        \"totalSeats\": 16,\n        \"seats\": [\n            {\n                \"seatId\": \"vzqcuh3kn\",\n                \"seatNumber\": \"1A\",\n                \"isAvailable\": false\n            },\n            {\n                \"seatId\": \"tnkzkfj6r\",\n                \"seatNumber\": \"1B\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"6x8kx3449\",\n                \"seatNumber\": \"1C\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"hxp6rcicl\",\n                \"seatNumber\": \"1D\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"vhvwjp678\",\n                \"seatNumber\": \"2A\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"htmyo9yw0\",\n                \"seatNumber\": \"2B\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"wie896igb\",\n                \"seatNumber\": \"2C\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"w6m1oa86o\",\n                \"seatNumber\": \"2D\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"qmcdscmtu\",\n                \"seatNumber\": \"3A\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"1pwbcefol\",\n                \"seatNumber\": \"3B\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"upvyzp71o\",\n                \"seatNumber\": \"3C\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"o71ebfr68\",\n                \"seatNumber\": \"3D\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"wae16vzc2\",\n                \"seatNumber\": \"4A\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"hnj24nt6g\",\n                \"seatNumber\": \"4B\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"qhu8heejh\",\n                \"seatNumber\": \"4C\",\n                \"isAvailable\": true\n            },\n            {\n                \"seatId\": \"ykp11p6ed\",\n                \"seatNumber\": \"4D\",\n                \"isAvailable\": true\n            }\n        ]\n    },\n    \"seatNumber\": \"1A\",\n    \"passengerDetails\": {\n        \"passengerId\": \"yp29qnbqr\",\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Check Service Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/service-health",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"service-health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/api/service-health",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"api",
+								"service-health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-26/ArUHn77mlbHDzztbMdxruYIc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Feb 2025 08:11:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Service Health OK\"\n}"
+				}
+			]
+		}
+	]
+}
